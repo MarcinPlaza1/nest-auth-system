@@ -1,0 +1,16 @@
+export enum ActivityType {
+  LOGIN = 'login',
+  LOGOUT = 'logout',
+  PASSWORD_RESET = 'password_reset',
+  PASSWORD_CHANGE = 'password_change',
+  ROLE_ASSIGNED = 'role_assigned',
+  ROLE_REMOVED = 'role_removed',
+  PERMISSION_GRANTED = 'permission_granted',
+  PERMISSION_REVOKED = 'permission_revoked',
+  SESSION_CREATED = 'session_created',
+  SESSION_ACTIVITY = 'session_activity',
+  SESSION_LOGOUT = 'session_logout',
+  SESSION_EXPIRED = 'session_expired',
+  SECURITY_ALERT = 'security_alert',
+  PROFILE_UPDATE = 'profile_update',
+} 

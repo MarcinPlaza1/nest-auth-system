@@ -1,0 +1,27 @@
+services:
+  authsystem:
+    image: authsystem
+    build: .
+    container_name: auth-system
+    restart: always
+    environment:
+      NODE_ENV: production
+      DATABASE_URI: mongodb+srv://plazamarcin098:FhhKOH0xD8ZYsSwr@backend.emobtl9.mongodb.net/
+      JWT_SECRET: ${JWT_SECRET}
+      AZURE_KEY_VAULT_URI: ${AZURE_KEY_VAULT_URI}
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo-db
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
